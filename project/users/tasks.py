@@ -33,7 +33,7 @@ def task_process_notification(self):
             raise Exception()
 
         # this would block the I/O
-        requests.post('https://httpbin.org/delay/5')
+        requests.post("https://httpbin.org/delay/5")
     except Exception as e:
-        logger.error('exception raised, it would be retry after 5 seconds')
+        logger.error("exception raised, it would be retry after 5 seconds")
         raise self.retry(exc=e, countdown=5) from e

@@ -16,6 +16,7 @@ migrate = Migrate()
 ext_celery = FlaskCeleryExt(create_celery_app=make_celery)
 csrf = CSRFProtect()
 
+
 def create_app(config_name=None):
 
     if config_name is None:
