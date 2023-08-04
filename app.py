@@ -1,8 +1,11 @@
+import eventlet
+
 from project import create_app, ext_celery, socketio
+
 
 app = create_app()
 celery = ext_celery.celery
-
+eventlet.monkey_patch()
 
 @app.route("/")
 def hello_world():
